@@ -19,7 +19,10 @@ def greet():
 def playing():
     return render_template('index.html', players=players)
 
-
+@app.route('/gameplay')
+def gameplay():
+    playing_game = play_game(player1, player2)
+    return render_template('index.html', players=players, winner=playing_game)
 
 
 @app.route('/rock/paper')
