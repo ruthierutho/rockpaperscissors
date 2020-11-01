@@ -15,9 +15,18 @@ from app.models.player import *
 def greet():
     return "Hello"
 
-@app.route('/<move1>/<move2>')
-def playing(move1, move2):
-    return play_game(player2, player3)
+# @app.route('/<move1>/<move2>')
+# def playing(move1, move2):
+#     return play_game(player1, player2)
+
+@app.route('/rock/paper')
+def rock_paper():
+    return "Paper beats rock!"
+
+@app.route('/scissors/rock')
+def scissors_rock():
+    return "Rock beats scissors!"
+
 
 
 
