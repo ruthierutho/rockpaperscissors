@@ -9,6 +9,9 @@ players = [player1, player2]
 def add_new_player(player):
     players.append(player)
 
+def add_new_players(player1, player2):
+    players.append(player1, player2)
+
 def play_game(player1, player2):
     if player1.move == "rock" and player2.move == "paper":
         return f"{player2.name} wins by playing paper"

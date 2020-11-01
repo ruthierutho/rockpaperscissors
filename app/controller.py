@@ -39,11 +39,16 @@ def gameplay():
 
 @app.route('/choose-move', methods=['POST'])
 def choose_move():
-    new_name = request.form['name']
-    new_move = request.form ['move']
-    new_player = Player(name=new_name, move=new_move)
-    add_new_player(new_player)
-    return render_template('index.html', players=players)
+    new_name1 = request.form['name1']
+    new_move1 = request.form ['move1']
+    new_name2 = request.form['name2']
+    new_move2 = request.form ['move2']
+    new_player1 = Player(name=new_name1, move=new_move1)
+    new_player2 = Player(name=new_name2, move=new_move2)
+    add_new_player(new_player1)
+    add_new_player(new_player2)
+    playing_game = play_game(new_player1, new_player2)
+    return render_template('index.html', players=players, winner=playing_game)
 
 
 
