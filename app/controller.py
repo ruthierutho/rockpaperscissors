@@ -17,7 +17,7 @@ def greet():
 
 @app.route('/<move1>/<move2>')
 def playing(move1, move2):
-    return play_game(player1, player2)
+    return play_game(player2, player3)
 
 
 
