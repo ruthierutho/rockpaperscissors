@@ -9,7 +9,13 @@
         <div>
             <p>{{player.name}} played <b>{{player.move}}</b></p>
         </div>
-        {% endfor %}
+        {% endfor %}  
+        
+        {% for new_player in new_players %}
+        <div>
+            <p>{{new_player.name}} played <b>{{new_player.move}}</b></p>
+        </div>
+        {% endfor %} 
 
         <p>{{ winner }}</p>
 
