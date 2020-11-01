@@ -15,15 +15,6 @@ from app.models.player import *
 def greet():
     return "Hello"
 
-@app.route('/playgame')
-def playing():
-    return render_template('index.html', players=players)
-
-@app.route('/gameplay')
-def gameplay():
-    playing_game = play_game(player1, player2)
-    return render_template('index.html', players=players, winner=playing_game)
-
 
 @app.route('/rock/paper')
 def rock_paper():
@@ -37,6 +28,22 @@ def scissors_rock():
 def scissors_paper():
     return "Scissors beats paper!"
 
+@app.route('/playgame')
+def playing():
+    return render_template('index.html', players=players)
+
+@app.route('/gameplay')
+def gameplay():
+    playing_game = play_game(player1, player2)
+    return render_template('index.html', players=players, winner=playing_game)
+
+@app.route('/choose-move', methods=['POST'])
+def choose_move():
+    new_name = request.form['name']
+    new_move = request.form ['move']
+    new_player = Player(name=new_name, move=new_move)
+    add_new_player(new_player)
+    return render_template('index.html', players=players)
 
 
 
