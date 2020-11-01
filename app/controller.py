@@ -15,9 +15,12 @@ from app.models.player import *
 def greet():
     return "Hello"
 
-# @app.route('/<move1>/<move2>')
-# def playing(move1, move2):
-#     return play_game(player1, player2)
+@app.route('/playgame')
+def playing():
+    return render_template('index.html', players=players)
+
+
+
 
 @app.route('/rock/paper')
 def rock_paper():
@@ -26,6 +29,10 @@ def rock_paper():
 @app.route('/scissors/rock')
 def scissors_rock():
     return "Rock beats scissors!"
+
+@app.route('/scissors/paper')
+def scissors_paper():
+    return "Scissors beats paper!"
 
 
 

@@ -2,8 +2,8 @@ from app.models.player import *
 
 player1 = Player("Harry", "paper")
 player2 = Player("Ron", "rock")
-player3 = Player("Hermione", "scissors")
-players = [player1, player2, player2]
+# player3 = Player("Hermione", "scissors")
+players = [player1, player2]
 
 def play_game(player1, player2):
     if player1.move == "rock" and player2.move == "paper":

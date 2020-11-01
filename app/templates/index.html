@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Rock! Paper! Scissors!</title>
+    </head>
+    <body>
+        <h1>Rock! Paper! Scissors!</h1>
+
+        {% for player in players %}
+        <div>
+            <p>{{player.name}} played <b>{{player.move}}</b></p>
+        </div>
+            
+        {% endfor %}
+
+        <div>
+        {% for player in players %}
+            
+            {% if player1.move == "rock" and player2.move == "paper" %}
+                    <b>Player 2 wins by playing paper</b>        
+
+            {% elif player1.move == "paper" and player2.move == "rock" %}
+                    <b>Player 1 wins by playing paper"</b>
+          
+            {% elif player1.move == "rock" and player2.move == "scissors" %}
+                    <b>Player 1 wins by playing rock"</b>
+
+            {% elif player1.move == "scissors" and player2.move == "rock" %}
+                    <b>Player 2 wins by playing rock"</b>
+
+            {% elif player1.move == "paper" and player2.move == "scissors" %}
+                    <b>Player 2 wins by playing scissors"</b>
+
+            {% elif player1.move == "scissors" and player2.move == "paper" %}
+                    <b>Player 1 wins by playing scissors"</b>
+            {% elif player1.move == player2.move %}
+                    <b>It's a draw!</b>
+            {% endif %}            
+    
+        {% endfor %}
+        </div>
+    </body>
+</html>
